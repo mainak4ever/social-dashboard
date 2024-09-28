@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Social Dashboard Platform
+
+You can view the live version of the application here:
+
+🔗 [Social Dashboard](https://social-dashboard-orcin.vercel.app/)
+
+A dynamic internal social network platform built with **Next.js** and **Chakra UI**, designed for professional and clean UI/UX. The platform includes event management, posting, and friend request features, making it an ideal space for internal team collaboration and engagement.
+
+## Features
+
+- **Event Creation and Management**: Users can create events, choose from predefined categories, and view detailed information about each event.
+- **Posts**: Users can post updates and interact with other users' posts by commenting and liking.
+- **Friend Requests**: Users can send and accept friend requests to grow their internal network.
+- **Responsive Design**: Built with responsive and adaptive UI for seamless experience on different screen sizes.
+- **Custom Themes**: The UI is styled using a custom color theme with black, gray, and gold tones.
+
+## Tech Stack
+
+- **Next.js**: A powerful React framework for server-side rendering and building modern web applications.
+- **Chakra UI**: For building the UI components with accessible and customizable design tokens.
+- **React Icons**: For rendering dynamic icons based on event categories.
+- **Tailwind CSS**: For additional styling and customization based on the project's theme.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy of the project up and running, follow these steps.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js** (v14 or later)
+- **npm** or **yarn**
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-username/social-dashboard.git
+   ```
+
+2. **Navigate to the project directory**:
+
+   ```bash
+   cd social-dashboard
+   ```
+
+3. **Install dependencies**:
+
+   If you're using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or if you're using yarn:
+
+   ```bash
+   yarn install
+   ```
+
+### Running the App
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with yarn:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The application will be available at:
 
-## Learn More
+```
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Hosted Link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can view the live version of the application here:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+🔗 [Social Dashboard](https://social-dashboard-orcin.vercel.app/)
 
-## Deploy on Vercel
+## Custom Theme
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app utilizes a custom theme with the following colors:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Primary Background Color**: `#262626` (Gray)
+- **Accent Color**: `#FEA026` (Gold)
+- **Text Color**: `#FFFFFF` (White)
+
+### Screenshots
+
+1. **Dashboard**:
+   ![Dashboard](screenshots/dashboard.png)
+
+## Folder Structure
+
+```
+/components
+  - EventsSidebar.js        # Handles event creation and event details modal
+/pages
+  - index.js                # Main entry point for the dashboard
+/styles
+  - globals.css             # Global styles using Tailwind CSS
+  - theme.js                # Chakra UI custom theme configuration
+```
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/social-dashboard/issues) if you want to contribute.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Next.js** for making server-side rendering simple.
+- **Chakra UI** for offering a customizable component library.
+- **React Icons** for easy integration of icons into React projects.
