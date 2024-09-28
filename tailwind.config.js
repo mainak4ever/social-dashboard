@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        gold: 'rgb(254,160,38)',
+        gold: 'rgb(227,160,38)',
         dark1: 'rgb(15,15,15)',
         dark2: 'rgb(30,30,30)',
         light:'rgba(255,255,255,0.49)'
