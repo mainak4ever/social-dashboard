@@ -46,7 +46,7 @@ const RightSidebar = () => {
     console.log(`Friend request declined from ${id}`);
     setRequests(requests.filter(request => request.id !== id));
     toast({
-      title: "Request Decined",
+      title: "Request Declined",
       status: "error",
       duration: 2000,
       isClosable: true,
@@ -66,7 +66,7 @@ const RightSidebar = () => {
             //   <FaPaperPlane className="text-gray-400" />
             <div className='text-[rgba(255,255,255,0.69)] px-1 rounded-3xl py-0.5  border-[rgba(255,255,255,0.69)]'>Sent</div>
             ) : (
-              <button onClick={() => handleAddFriend(contact.id)} className="text-gold">
+              <button onClick={() => handleAddFriend(contact.id)} className="text-gold" title='Add friend'>
                 <FaUserPlus />
               </button>
             )}
@@ -83,8 +83,8 @@ const RightSidebar = () => {
                 <Image src={request.dp} alt={request.name} width={28} height={28} priority className="w-7 h-7 object-cover rounded-full mr-3" />
                 <span className="flex-grow text-xs">{request.name}</span>
                 <div className='flex gap-2 items-center text-xs'>
-                  <button onClick={() => handleAcceptRequest(request.id)} className="text-black  bg-gold px-2 border border-gold py-1 rounded-3xl"><FaCheck /></button>
-                  <button onClick={() => handleDeclineRequest(request.id)} className="text-[rgba(255,255,255,0.69)] px-2 rounded-3xl py-1 border border-[rgba(255,255,255,0.69)]"><RxCross2 /></button>
+                  <button onClick={() => handleAcceptRequest(request.id)} title='Accept' className="text-black  bg-gold px-2 border border-gold py-1 rounded-3xl"><FaCheck /></button>
+                  <button onClick={() => handleDeclineRequest(request.id)} title='Decline' className="text-[rgba(255,255,255,0.69)] px-2 rounded-3xl py-1 border border-[rgba(255,255,255,0.69)]"><RxCross2 /></button>
                 </div>
               </div>
             ))}
