@@ -205,10 +205,10 @@ const EventsSidebar = () => {
         {events.map((event) => (
           <li
             key={event.id}
-               className="flex gap-4 items-center px-[15px] py-[9px] text-[rgba(255,255,255,0.69)] bg-black rounded-xl shadow border border-black  hover:cursor-pointer  hover:border-gold"
+               className="flex gap-4 items-center px-[15px] group py-[9px] text-[rgba(255,255,255,0.69)] bg-black rounded-xl shadow border border-black  hover:cursor-pointer  hover:border-gold"
                onClick={() => handleOpenEventDetails(event)} // Open event details modal on click
           >
-            <span className="text-[16px] font-thin">{event.icon}</span>
+            <span className="text-[16px] group-hover:text-gold font-thin">{event.icon}</span>
             <div>
               <span className="text-sm font-thin">{event.title}</span>
               {/* <p className="text-sm">{event.description}</p> */}
