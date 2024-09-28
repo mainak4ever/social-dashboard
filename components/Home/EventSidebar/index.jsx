@@ -173,14 +173,19 @@ const EventsSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null); // State to store clicked event
   const [newEvent, setNewEvent] = useState({ title: '', description: '', category: '' });
+     const [error,setError] = useState("")
 
   const handleCreateEvent = () => {
+       setError("")
     if (newEvent.title && newEvent.category) {
       const selectedCategory = eventCategories.find(cat => cat.value === newEvent.category);
       setEvents([...events, { id: events.length + 1, ...newEvent, icon: selectedCategory.icon }]);
       setNewEvent({ title: '', description: '', category: '' });
       setIsOpen(false);
-    }
+    }else{
+          setError("Missing Fields")
+     }
+         
   };
 
   const handleOpenEventDetails = (event) => {
@@ -267,6 +272,8 @@ const EventsSidebar = () => {
                 color="white"
               />
             </FormControl>
+
+          <p className="text-red-500 text-xs mt-4">*{error}*</p>
           </ModalBody>
 
           <ModalFooter>
