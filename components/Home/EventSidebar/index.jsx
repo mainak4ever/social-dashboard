@@ -273,7 +273,7 @@ const EventsSidebar = () => {
               />
             </FormControl>
 
-          <p className="text-red-500 text-xs mt-4">*{error}*</p>
+          <p className="text-red-500 text-xs mt-4">{error}</p>
           </ModalBody>
 
           <ModalFooter>
