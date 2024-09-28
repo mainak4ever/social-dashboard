@@ -50,6 +50,7 @@ const PostsSection = () => {
             post.id === postId
                 ? {
                     ...post,
+                    comments: post.comments + 1,
                     commentList: [
                         ...post.commentList,
                         {
@@ -198,19 +199,19 @@ const PostsSection = () => {
                                     <div className="flex flex-row gap-6 p-3 h-[160px]">
                                         <div className="flex flex-col justify-center items-start h-full gap-4" onClick={() => handleExpandPost(post.id)}>
                                             <h3 className="font-semibold ">{post.title}</h3>
-                                            <div className=" border rounded-3xl px-3 py-[4px] text-xs" >Explore</div>
+                                            <div className=" border rounded-3xl px-3 py-[4px] text-xs hover:bg-[rgb(225,160,38,.3)]" >Explore</div>
                                         </div>
 
                                         <div className="flex flex-col justify-between items-center h-full text-light text-xs">
-                                            <div onClick={() => toggleLike(post.id)} className=" flex flex-col gap-1 items-center">
+                                            <div onClick={() => toggleLike(post.id)} title="Like" className=" flex flex-col gap-1 items-center">
                                                 <FaThumbsUp className={` ${post.liked ? 'text-red-500' : ''}`} />
                                                 {post.likes}
                                             </div>
-                                            <div onClick={() => handleExpandPost(post.id)} className=" flex flex-col gap-1 items-center">
+                                            <div onClick={() => handleExpandPost(post.id)} title="Comment" className=" flex flex-col gap-1 items-center">
                                                 <FaComment className="" />
                                                 {post.comments}
                                             </div>
-                                            <div onClick={handleSharePost} className=" flex flex-col gap-1 items-center">
+                                            <div onClick={handleSharePost} title="Share" className=" flex flex-col gap-1 items-center">
                                                 <FaShare className="" />
                                                 {post.shares}
                                             </div>
@@ -349,7 +350,7 @@ const PostsSection = () => {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent bg="rgb(38,38,38)" color="white">
-                    <ModalHeader color="rgb(254,160,38)">Create New Post</ModalHeader>
+                    <ModalHeader color="rgb(225,160,38)">Create New Post</ModalHeader>
                     <ModalCloseButton color="white" />
                     <ModalBody>
                         <Input
@@ -397,9 +398,9 @@ const PostsSection = () => {
                         </Button>
                         <Button
                             colorScheme="yellow"
-                            bg="rgb(254,160,38)"
+                            bg="rgb(225,160,38)"
                             color="black"
-                            _hover={{ bg: "rgb(254, 160, 38)" }}
+                            _hover={{ bg: "rgb(255, 160, 38)" }}
                             onClick={handleCreatePost}
                         >
                             Create
