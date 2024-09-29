@@ -1,139 +1,3 @@
-// "use client";
-// import { useState } from 'react';
-// import { FaCalendarAlt, FaRocket, FaGraduationCap, FaUsers } from 'react-icons/fa';
-// import {
-//   Button,
-//   Modal,
-//   ModalOverlay,
-//   ModalContent,
-//   ModalHeader,
-//   ModalCloseButton,
-//   ModalBody,
-//   ModalFooter,
-//   FormControl,
-//   FormLabel,
-//   Input,
-//   Select,
-//   Textarea,
-// } from '@chakra-ui/react';
-
-// const eventCategories = [
-//   { label: 'Meeting', value: 'meeting', icon: <FaCalendarAlt /> },
-//   { label: 'Launch', value: 'launch', icon: <FaRocket /> },
-//   { label: 'Workshop', value: 'workshop', icon: <FaGraduationCap /> },
-//   { label: 'Team Building', value: 'team', icon: <FaUsers /> },
-// ];
-
-// const sampleEvents = [
-//     { id: 1, title: 'Team Meeting', description: 'Discuss project updates', category: 'meeting', icon: <FaCalendarAlt /> },
-//     { id: 2, title: 'Product Launch', description: 'Launch the new product', category: 'launch', icon: <FaRocket /> },
-//     { id: 3, title: 'Workshop on AI', description: 'Learn about AI technologies', category: 'workshop', icon: <FaGraduationCap /> },
-//     { id: 4, title: 'Team Building Activity', description: 'Fun activities to bond', category: 'team', icon: <FaUsers /> },
-//   ];
-
-// const EventsSidebar = () => {
-//   const [events, setEvents] = useState(sampleEvents);
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [newEvent, setNewEvent] = useState({ title: '', description: '', category: '' });
-
-//   const handleCreateEvent = () => {
-//     if (newEvent.title && newEvent.category) {
-//       const selectedCategory = eventCategories.find(cat => cat.value === newEvent.category);
-//       setEvents([...events, { id: events.length + 1, ...newEvent, icon: selectedCategory.icon }]);
-//       setNewEvent({ title: '', description: '', category: '' });
-//       setIsOpen(false);
-//     }
-//   };
-
-//   return (
-//     <div className="w-full p-4 h-full flex flex-col text-white">
-     
-//       <h2 className="mb-4 text-sm text-[rgba(255,255,255,0.69)]">EVENTS</h2>
-
-//       <ul className="list-none flex flex-col gap-4 p-0 h-[90%] overflow-y-auto" style={{scrollbarWidth: "none"}}>
-//         {events.map((event) => (
-//           <li key={event.id} className="flex gap-4 items-center px-4 py-2.5 text-[rgba(255,255,255,0.69)] bg-black rounded-xl shadow hover:text-gold hover:cursor-pointer hover:border-none">
-//             <span className="text-[16px] font-thin">{event.icon}</span>
-//             <div>
-//               <span className="text-sm font-thin">{event.title}</span>
-//               {/* <p className="text-sm">{event.description}</p> */}
-//             </div>
-//           </li>
-//         ))}
-//       </ul>
-      
-//         <div className='border-t border-[rgb(50,50,50)] w-full'>
-//       <Button 
-//         colorScheme="yellow" 
-//         onClick={() => setIsOpen(true)}
-//         className="bg-gold text-black hover:bg-yellow-600 rounded-3xl mt-6 w-full "
-//       >
-//         + Create Event
-//       </Button>
-//       </div>
-
-//       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-//         <ModalOverlay />
-//         <ModalContent className='bg-dark2' >
-//           <ModalHeader>Create a New Event</ModalHeader>
-//           <ModalCloseButton />
-//           <ModalBody>
-//             <FormControl mb={3}>
-//               <FormLabel color="rgb(254,160,38)">Category</FormLabel>
-//               <Select
-//                 value={newEvent.category}
-//                 onChange={(e) => setNewEvent({ ...newEvent, category: e.target.value })}
-//                 className='bg-dark1 border-none'
-//                 color="white"
-//               >
-//                 <option value="" disabled>Select Category</option>
-//                 {eventCategories.map((category) => (
-//                   <option key={category.value} value={category.value} className='text-black'>
-//                     {category.label}
-//                   </option>
-//                 ))}
-//               </Select>
-//             </FormControl>
-
-//             <FormControl mb={3}>
-//               <FormLabel color="rgb(254,160,38)">Event Title</FormLabel>
-//               <Input
-//                 placeholder="Event Title"
-//                 value={newEvent.title}
-//                 onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-//                 className='bg-dark1 border-none'
-//                 color="white"
-//               />
-//             </FormControl>
-
-//             <FormControl mb={3}>
-//               <FormLabel color="rgb(254,160,38)">Event Description</FormLabel>
-//               <Textarea
-//                 placeholder="Event Description"
-//                 value={newEvent.description}
-//                 onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
-//                 className='bg-dark1 border-none'
-//                 color="white"
-//               />
-//             </FormControl>
-//           </ModalBody>
-
-//           <ModalFooter>
-//             <Button colorScheme="green" onClick={handleCreateEvent} mr={3} bg="rgb(254,160,38)" color="black">
-//               Save Event
-//             </Button>
-//             <Button colorScheme="red" onClick={() => setIsOpen(false)}>
-//               Cancel
-//             </Button>
-//           </ModalFooter>
-//         </ModalContent>
-//       </Modal>
-//     </div>
-//   );
-// };
-
-// export default EventsSidebar;
-
 
 "use client";
 import { useState } from 'react';
@@ -173,19 +37,14 @@ const EventsSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null); // State to store clicked event
   const [newEvent, setNewEvent] = useState({ title: '', description: '', category: '' });
-     const [error,setError] = useState("")
 
   const handleCreateEvent = () => {
-       setError("")
     if (newEvent.title && newEvent.category) {
       const selectedCategory = eventCategories.find(cat => cat.value === newEvent.category);
       setEvents([...events, { id: events.length + 1, ...newEvent, icon: selectedCategory.icon }]);
       setNewEvent({ title: '', description: '', category: '' });
       setIsOpen(false);
-    }else{
-          setError("Missing Fields")
-     }
-         
+    }
   };
 
   const handleOpenEventDetails = (event) => {
@@ -197,7 +56,7 @@ const EventsSidebar = () => {
   };
 
   return (
-    <div className="w-full p-4 h-full flex flex-col text-white">
+    <div className="w-full pb-2 h-full flex flex-col text-white">
      
       <h2 className="mb-4 text-sm text-[rgba(255,255,255,0.69)]">EVENTS</h2>
 
@@ -205,10 +64,10 @@ const EventsSidebar = () => {
         {events.map((event) => (
           <li
             key={event.id}
-               className="flex gap-4 items-center px-[15px] group py-[9px] text-[rgba(255,255,255,0.69)] bg-black rounded-xl shadow border border-black  hover:cursor-pointer  hover:border-gold"
-               onClick={() => handleOpenEventDetails(event)} // Open event details modal on click
+            className="flex gap-4 items-center px-[15px] group py-[9px] text-[rgba(255,255,255,0.69)] bg-black rounded-xl shadow border border-black  hover:cursor-pointer  hover:border-gold"
+            onClick={() => handleOpenEventDetails(event)} 
           >
-            <span className="text-[16px] group-hover:text-gold font-thin">{event.icon}</span>
+            <span className="text-[16px] font-thin group-hover:text-gold">{event.icon}</span>
             <div>
               <span className="text-sm font-thin">{event.title}</span>
               {/* <p className="text-sm">{event.description}</p> */}
@@ -252,7 +111,7 @@ const EventsSidebar = () => {
             </FormControl>
 
             <FormControl mb={3}>
-              <FormLabel color="rgb(254,160,38)">Event Title</FormLabel>
+              <FormLabel color="rgb(225,160,38)">Event Title</FormLabel>
               <Input
                 placeholder="Event Title"
                 value={newEvent.title}
@@ -263,7 +122,7 @@ const EventsSidebar = () => {
             </FormControl>
 
             <FormControl mb={3}>
-              <FormLabel color="rgb(254,160,38)">Event Description</FormLabel>
+              <FormLabel color="rgb(225,160,38)">Event Description</FormLabel>
               <Textarea
                 placeholder="Event Description"
                 value={newEvent.description}
@@ -272,12 +131,10 @@ const EventsSidebar = () => {
                 color="white"
               />
             </FormControl>
-
-          <p className="text-red-500 text-xs mt-4">{error}</p>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="green" onClick={handleCreateEvent} mr={3} bg="rgb(254,160,38)" color="black">
+            <Button colorScheme="green" onClick={handleCreateEvent} mr={3} bg="rgb(225,160,38)" color="black">
               Save Event
             </Button>
             <Button colorScheme="red" onClick={() => setIsOpen(false)}>
@@ -305,7 +162,7 @@ const EventsSidebar = () => {
               
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme="yellow" onClick={handleCloseEventDetails} bg="rgb(254,160,38)" color="black">
+              <Button colorScheme="yellow" onClick={handleCloseEventDetails} bg="rgb(225,160,38)" color="black">
                 Close
               </Button>
             </ModalFooter>
