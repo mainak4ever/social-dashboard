@@ -167,7 +167,7 @@ const PostsSection = () => {
                     filteredPosts.map((post) => (
                         <div
                             key={post.id}
-                            className={`relative bg-dark2 rounded-xl shadow-lg cursor-pointer  overflow-hidden transition-all duration-600 ${expandedPostId === post.id ? "w-full flex-col" : "w-[calc(50%-32px)] flex-row flex"
+                            className={`relative bg-dark2 rounded-xl shadow-lg overflow-hidden transition-all duration-600 ${expandedPostId === post.id ? "w-full flex-col" : "w-[calc(50%-32px)] flex-row flex"
                                 }`}
                             
                             // onClick={() => expandedPostId === null && handleExpandPost(post.id)}
@@ -175,7 +175,7 @@ const PostsSection = () => {
                             {/* Close Button for Expanded Post */}
                             {expandedPostId === post.id && (
                                 <button
-                                    className="absolute top-2.5 right-2.5 bg-[rgba(255,255,255,0.14)] p-1 rounded-full z-10"
+                                    className="absolute top-2.5 right-2.5 cursor-pointer bg-[rgba(255,255,255,0.14)] p-1 rounded-full z-10"
                                     onClick={handleCloseExpandedPost}
                                 >
                                     <FaTimes className="text-[rgba(255,255,255,0.71)]" />
@@ -187,7 +187,7 @@ const PostsSection = () => {
                                 <img
                                     src={post.image}
                                     alt={post.title}
-                                    className="w-[160px] h-[160px] object-cover  mr-4"
+                                    className="w-[160px] h-[160px] object-cover cursor-pointer  mr-4"
                                     onClick={() => handleExpandPost(post.id)}
                                 />
                             )}
@@ -197,21 +197,21 @@ const PostsSection = () => {
 
                                 {expandedPostId !== post.id && (
                                     <div className="flex flex-row gap-6 p-3 h-[160px]">
-                                        <div className="flex flex-col justify-center items-start h-full gap-4" onClick={() => handleExpandPost(post.id)}>
-                                            <h3 className="font-semibold ">{post.title}</h3>
-                                            <div className=" border rounded-3xl px-3 py-[4px] text-xs hover:bg-[rgb(225,160,38,.3)]" >Explore</div>
+                                        <div className="flex flex-col justify-center items-start h-full  gap-4" onClick={() => handleExpandPost(post.id)}>
+                                            <h3 className="font-semibold cursor-pointer">{post.title}</h3>
+                                            <div className=" border rounded-3xl px-3 cursor-pointer py-[4px] text-xs hover:bg-[rgb(225,160,38,.3)]" >Explore</div>
                                         </div>
 
                                         <div className="flex flex-col justify-between items-center h-full text-light text-xs">
-                                            <div onClick={() => toggleLike(post.id)} title="Like" className=" flex flex-col gap-1 items-center">
+                                            <div onClick={() => toggleLike(post.id)} title="Like" className=" flex flex-col gap-1 cursor-pointer items-center">
                                                 <FaThumbsUp className={` ${post.liked ? 'text-red-500' : ''}`} />
                                                 {post.likes}
                                             </div>
-                                            <div onClick={() => handleExpandPost(post.id)} title="Comment" className=" flex flex-col gap-1 items-center">
+                                            <div onClick={() => handleExpandPost(post.id)} title="Comment" className="cursor-pointer flex flex-col gap-1 items-center">
                                                 <FaComment className="" />
                                                 {post.comments}
                                             </div>
-                                            <div onClick={handleSharePost} title="Share" className=" flex flex-col gap-1 items-center">
+                                            <div onClick={handleSharePost} title="Share" className="cursor-pointer flex flex-col gap-1 items-center">
                                                 <FaShare className="" />
                                                 {post.shares}
                                             </div>
@@ -234,15 +234,15 @@ const PostsSection = () => {
                                         <div className="p-4">
 
                                             <div className="flex justify-between items-center text-light">
-                                                <div onClick={() => toggleLike(post.id)} className=" flex gap-1 items-center text-sm">
-                                                    <FaThumbsUp className={`inline mr-1 ${post.liked ? 'text-red-500' : ''}`} />
+                                                <div onClick={() => toggleLike(post.id)} className="cursor-pointer flex gap-1 items-center text-sm">
+                                                    <FaThumbsUp className={` inline mr-1 ${post.liked ? 'text-red-500' : ''}`} />
                                                     {post.likes} Likes
                                                 </div>
-                                                <div onClick={() => toggleComments(post.id)} className=" flex gap-1 items-center text-sm">
+                                                <div onClick={() => toggleComments(post.id)} className="cursor-pointer flex gap-1 items-center text-sm">
                                                     <FaComment className="inline mr-1" />
                                                     {post.comments} Comments
                                                 </div>
-                                                <div onClick={handleSharePost} className=" flex gap-1 items-center text-sm">
+                                                <div onClick={handleSharePost} className="cursor-pointer flex gap-1 items-center text-sm">
                                                     <FaShare className="inline mr-1" />
                                                     {post.shares} Shares
                                                 </div>
