@@ -159,7 +159,7 @@ const PostsSection = () => {
                 </button>
             </div>
 
-            <h2 className="mb-4 text-lg font-semibold">POSTS</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">POSTS</h2>
 
             {/* Posts List */}
             <div className="flex gap-8 flex-wrap">
