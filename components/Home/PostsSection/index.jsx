@@ -198,8 +198,8 @@ const PostsSection = () => {
                                 {expandedPostId !== post.id && (
                                     <div className="flex flex-row gap-6 p-3 h-[160px]">
                                         <div className="flex flex-col justify-center items-start h-full  gap-4" onClick={() => handleExpandPost(post.id)}>
-                                            <h3 className="font-semibold cursor-pointer">{post.title}</h3>
-                                            <div className=" border rounded-3xl px-3 cursor-pointer py-[4px] text-xs hover:bg-[rgb(225,160,38,.3)]" >Explore</div>
+                                            <h3 className="font-semibold cursor-pointer text-white">{post.title}</h3>
+                                            <div className=" border rounded-3xl px-3 cursor-pointer text-white py-[4px] text-xs hover:bg-[rgb(225,160,38,.3)]" >Explore</div>
                                         </div>
 
                                         <div className="flex flex-col justify-between items-center h-full text-light text-xs">
@@ -225,7 +225,7 @@ const PostsSection = () => {
                                     <div className="mt-2">
 
 
-                                        <h3 className="font-semibold text-2xl px-4 mb-2">{post.title}</h3>
+                                        <h3 className="font-semibold text-2xl px-4 mb-2 text-white">{post.title}</h3>
                                         <img
                                             src={post.image}
                                             alt={post.title}
